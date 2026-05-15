@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kinly Family Tree</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Kinly Family Tree</h1>
+  <p>Add people and link them to build your family tree.</p>
 
+  <!-- Add Person Form -->
+  <div id="form-container">
+    <h2>Add Person</h2>
+    <form id="person-form">
+      <label>
+        Name:
+        <input type="text" id="name" required />
+      </label>
+      <label>
+        Father's name (optional):
+        <input type="text" id="father-name" />
+      </label>
+      <label>
+        Mother's name (optional):
+        <input type="text" id="mother-name" />
+      </label>
+      <label>
+        Gender:
+        <select id="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <button type="submit">Add Person</button>
+    </form>
+  </div>
+
+  <!-- Main Tree View -->
+  <div id="tree">
+    <h2>Family Tree</h2>
+    <p>No people added yet.</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
