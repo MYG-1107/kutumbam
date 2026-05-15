@@ -3,45 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kinly Family Tree</title>
+  <title>Kutumbam | Family Tree</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Kinly Family Tree</h1>
-  <p>Add people and link them to build your family tree.</p>
+  <div id="app">
+    <h1>Kutumbam</h1>
+    <p>Build your family tree by adding people and their relations.</p>
 
-  <!-- Add Person Form -->
-  <div id="form-container">
-    <h2>Add Person</h2>
-    <form id="person-form">
-      <label>
-        Name:
-        <input type="text" id="name" required />
-      </label>
-      <label>
-        Father's name (optional):
-        <input type="text" id="father-name" />
-      </label>
-      <label>
-        Mother's name (optional):
-        <input type="text" id="mother-name" />
-      </label>
-      <label>
-        Gender:
-        <select id="gender" required>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-      </label>
-      <button type="submit">Add Person</button>
-    </form>
-  </div>
+    <!-- Add starting person (head of the tree) -->
+    <div id="initial-form-container">
+      <h2>Add First Person</h2>
+      <form id="initial-person-form">
+        <label>
+          Name:
+          <input type="text" id="initial-name" required />
+        </label>
+        <label>
+          Gender:
+          <select id="initial-gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <button type="submit">Start Tree</button>
+      </form>
+    </div>
 
-  <!-- Main Tree View -->
-  <div id="tree">
-    <h2>Family Tree</h2>
-    <p>No people added yet.</p>
+    <!-- Central tree view -->
+    <div class="tree-container">
+      <div id="tree"></div>
+    </div>
+
+    <!-- Hover popup: add relations -->
+    <div id="add-popup" class="hidden">
+      <div class="popup-content">
+        <h4>Add relation for <span id="popup-name"></span></h4>
+        <button id="add-father">Add Father</button>
+        <button id="add-mother">Add Mother</button>
+        <button id="add-brother">Add Brother</button>
+        <button id="add-sister">Add Sister</button>
+        <button id="add-son">Add Son</button>
+        <button id="add-daughter">Add Daughter</button>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>
